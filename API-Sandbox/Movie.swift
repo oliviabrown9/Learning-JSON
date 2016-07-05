@@ -19,7 +19,7 @@ struct Movie {
     init(json: JSON) {
         self.name = json["im:name"]["label"].stringValue
         self.rightsOwner = json["rights"]["label"].stringValue
-        self.price = json["im:price"]["label"].doubleValue
+        self.price = json["im:price"]["attributes"]["amount"].doubleValue
         self.link = json["link"][0]["attributes"]["href"].stringValue
         self.releaseDate = json["im:releaseDate"]["label"].stringValue
     }

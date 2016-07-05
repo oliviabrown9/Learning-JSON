@@ -98,13 +98,33 @@ internal func exerciseThree() {
     // We've done you the favor of grabbing an array of JSON objects representing each movie
     let allMoviesData = moviesData["feed"]["entry"].arrayValue
     
+    var allMovies: [Movie] = []
+    
+    for entry in allMoviesData {
+        let movie = Movie(json: entry)
+        allMovies.append(movie)
+    }
+    
     /*
      
      Figure out a way to turn the allMoviesData array into Movie structs!
      
      */
-    var allMovies: [Movie] = []
-    
+    for movie in allMovies {
+        if movie.rightsOwner.containsString("Disney") {
+            print(movie.name)
+        }
+    }
+    for movie in allMovies {
+        if movie.price < 15 {
+            print(movie.name)
+        }
+        }
+    for movie in allMovies {
+        if movie.releaseDate.containsString("2016") {
+            print(movie.name)
+        }
+    }
     
     
     
