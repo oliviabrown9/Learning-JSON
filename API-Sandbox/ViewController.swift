@@ -28,6 +28,8 @@ class ViewController: UIViewController {
 //      exerciseTwo()
 //      exerciseThree()
         
+
+        
         let apiToContact = "https://itunes.apple.com/us/rss/topmovies/limit=25/json"
         // This code will call the iTunes top 25 movies endpoint listed above
         Alamofire.request(.GET, apiToContact).validate().responseJSON() { response in
@@ -39,8 +41,9 @@ class ViewController: UIViewController {
                     // Do what you need to with JSON here!
                     // The rest is all boiler plate code you'll use for API requests
                     
-                    
-                }
+//                    let randomMovie = Int(arc4random_uniform(UInt32(allMovies.count)))
+//                            print(allMovies[randomMovie])
+//                }
             case .Failure(let error):
                 print(error)
             }

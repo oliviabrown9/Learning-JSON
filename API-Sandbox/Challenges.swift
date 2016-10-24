@@ -100,6 +100,7 @@ internal func exerciseThree() {
     
     var allMovies: [Movie] = []
     
+    
     for entry in allMoviesData {
         let movie = Movie(json: entry)
         allMovies.append(movie)
